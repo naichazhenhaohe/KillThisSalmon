@@ -37,6 +37,7 @@
 
 ## ToDo-List
 
+- [x] 完成 Regular/Rank/League Battle 的时间表
 - [x] 已经爬到了所有的 gear 图片，所以可以开始最后一模块的实现了。
 - [ ] 图片预加载的问题。
 - [ ] rank/league Battle 以及 SplatNet Gear 的移动端改进。
