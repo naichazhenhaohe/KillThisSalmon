@@ -1,0 +1,110 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  max-height: 60px;
+  @media screen and (min-width: 992px) {
+    background: repeating-linear-gradient(
+      45deg,
+      #262626,
+      #262626 10px,
+      #141414 10px,
+      #141414 20px
+    );
+  }
+
+  .header-wrapper {
+    margin: 0 auto;
+    ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #fff;
+      li {
+        font-family: "Foo", "Helvetica", sans-serif;
+        font-size: 1.4rem;
+        text-align: center;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        line-height: 1;
+        a {
+          display: block;
+          padding: 14px 0 10px 0;
+          z-index: 3;
+          white-space: nowrap;
+          position: relative;
+          text-decoration: none;
+          color: #fff;
+        }
+        .font-origin {
+          color: #ff5600;
+        }
+        .font-green {
+          color: #18d618;
+        }
+        .font-purple {
+          color: #a51de1;
+        }
+        .font-pink {
+          color: #ef2d7c;
+        }
+        .font-yellow {
+          color: #ffcd00;
+        }
+      }
+    }
+    .nav {
+      position: fixed;
+      top: 35px;
+      right: 30px;
+      .show-bg {
+        background: #9c27b0;
+        padding: 3px;
+      }
+      .header-more {
+        padding: 3px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 5px;
+      }
+      ul {
+        display: block;
+        position: absolute;
+        right: 0;
+        margin: 0;
+        border-radius: 2px;
+        padding: 25px;
+        white-space: nowrap;
+        padding-right: 0;
+        li {
+          background: #9c27b0;
+          display: block;
+          font-family: "splatoon", sans-serif;
+          font-size: 1.2rem;
+          letter-spacing: 0.9px;
+          line-height: 0.7;
+          text-align: right;
+          border-bottom: 1px solid #ffffff;
+          padding: 0 2vw;
+          &:first-child {
+            border-radius: 10px 0 0 0;
+          }
+          &:last-child {
+            border-bottom: none;
+            border-radius: 0 0 10px 10px;
+          }
+        }
+      }
+    }
+  }
+}

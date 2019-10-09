@@ -1,0 +1,201 @@
+.salmonRun {
+  text-shadow: 1px 1px 0 #000;
+
+  .box {
+    border-radius: 32px;
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+    background-image: url("/images/bg/bg.png");
+    background-color: #ff5600;
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-flow: row nowrap;
+      padding: 0 20px;
+      @media screen and (max-width: 991px) {
+        justify-content: center;
+      }
+      .worker {
+        width: 40%;
+        position: relative;
+        img {
+          max-width: 100%;
+          position: absolute;
+          padding-right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+.salmonRun-rotation {
+  .schedule {
+    font-family: "Foo", "Helvetica", sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #7f0;
+    margin: 1vh 0;
+    @media screen and (max-width: 991px) {
+      font-size: 1.1rem;
+    }
+  }
+  .diff {
+    font-family: "splatoon", "Helvetica", sans-serif;
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+    margin: 1vh 0;
+    @media screen and (max-width: 991px) {
+      font-size: 1.1rem;
+    }
+  }
+  .stage {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    span {
+      display: block;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-family: "Foo", "Helvetica", sans-serif;
+      color: red;
+      font-size: 2rem;
+      letter-spacing: 0.9px;
+      @media screen and (max-width: 750px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  .salmon-weapons {
+    display: flex;
+    justify-content: space-between;
+    .weapon {
+      width: 23%;
+      text-align: center;
+      padding: 1vw;
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+      span {
+        font-size: 0.8rem;
+        font-family: "splatoon", "Helvetica", sans-serif;
+        display: block;
+      }
+    }
+  }
+}
+
+.salmonRun-status {
+  text-align: center;
+  font-family: "Foo", sans-serif;
+  font-size: 1.3rem;
+  margin: 1vh 0;
+}
+
+.salmon-future-sm {
+  display: none;
+  @media screen and (max-width: 450px) {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3vh;
+  }
+}
+.salmon-schedule-item {
+  font-family: "FOO", sans-serif;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+  display: none;
+  &:first-child {
+    margin-top: 5vh;
+  }
+  display: block;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 1rem;
+  align-items: center;
+  margin: 2vh 0;
+  img {
+    height: 3vh;
+  }
+}
+
+.salmon-future-lg {
+  text-align: center;
+  font-family: "FOO";
+  color: #0f0;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  margin: 5vh 0;
+  .salmon-futrue-text {
+    display: inline-block;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: text-shadow 0.3s;
+    &:hover {
+      text-shadow: #ff00f0 0 0 5px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
+}
+
+.origin {
+  background-color: #ff5600;
+  background-image: url("/images/bg/bg.png");
+}
+
+.salmonRun-modal,
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  width: 100%;
+  .modal-box {
+    position: relative;
+    top: 200px;
+    z-index: 51;
+    width: 40%;
+    padding: 24px 0;
+    margin: 0 auto;
+    border-radius: 25px;
+    button {
+      cursor: pointer;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: rgba($color: #000, $alpha: 0.45);
+      transition: color 0.3s;
+      padding: 0;
+      span {
+        display: block;
+        text-align: center;
+        width: 56px;
+        height: 56px;
+        line-height: 56px;
+        font-size: 16px;
+      }
+      &:hover {
+        color: rgba($color: #000000, $alpha: 0.75);
+      }
+    }
+  }
+}
+.modal-mask {
+  background-color: rgba(0, 0, 0, 0.65);
+  height: 100%;
+}

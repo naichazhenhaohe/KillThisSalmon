@@ -1,0 +1,21 @@
+footer {
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  div {
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+    color: #cbcbcb;
+    margin-bottom: 2vh;
+    a {
+      text-decoration: none;
+      color: #ff71aa;
+      transition: color 0.5s linear;
+      cursor: pointer;
+      &:hover {
+        color: #40e85f;
+      }
+    }
+  }
+}

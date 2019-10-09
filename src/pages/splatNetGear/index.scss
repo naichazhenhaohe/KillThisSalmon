@@ -1,0 +1,32 @@
+.gear-flex {
+  display: flex;
+  flex-flow: row wrap;
+  width: 70%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.gear-skill {
+  background-color: #000;
+  width: 56px;
+  height: 56px;
+  border-radius: 25px;
+  img {
+    max-width: 100%;
+  }
+}
+
+.skill-sm {
+  width: 40px;
+  height: 40px;
+}
+
+.gear-card {
+  width: 40%;
+  margin: 5vh auto;
+  max-width: 1140px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  padding: 20px 0;
+}
