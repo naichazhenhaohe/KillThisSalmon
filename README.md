@@ -27,18 +27,20 @@
 
 后端用了 Koa 2。<del>因为菜所以</del>只是简单的爬取一下数据，存到本地然后提供一下前端数据申请。
 
-爬数据是用的 nightmare 这个中间件。
+爬数据是用的 nightmare ，以及手动下载了
 
 ## 一些说明
 
-1. 本站数据、图片等来源于网路，所有权都归作者所有。
+1. 本站数据、图片、logo 等来源于网路，所有权都归作者所有。
 2. 会继续深化(开发)一些(花里胡哨的)功能。
-3. 确实没有参与到站内数据、资源的制作中(schedule 的数据是开放的，感谢[mattisenhower](https://twitter.com/mattisenhower)，但是所有的图片都是网路获取的)，所以如果有伤害/侵犯到谁的利益，真的很抱歉，请一定联系我 -> bbbiaozzza@gmail.com 。
+3. 确实没有参与到站内数据、资源的制作中，所以如果有伤害/侵犯到谁的利益，真的很抱歉，请一定联系我 -> bbbiaozzza@gmail.com 。
+4. 数据来源。一部分来自[splatoon2.ink](https://splatoon2.ink/)，感谢[mattisenhower](https://twitter.com/mattisenhower)。还有一部分来自[这里](https://content.oatmealdome.me/bcat/salmon_run)，因为被墙了，所以这里需要翻墙，而且这个网站反爬做的好厉害(可能就是我菜)，所以通过一些观察。。。在[这里](https://github.com/Leanny/leanny.github.io)拿到的。所以其实数据的获取都不是通过爬虫完成的，前面那个是直接申请的，后面那个是手动下载的(因为一份数据里就就够用到 2021 年初了，所以本来都打算拿起 python 写爬虫，现在也放弃了，什么时候心情好想起来去下载一下就好了。)
 
 ## ToDo-List
 
 - [x] 完成 Regular/Rank/League Battle 的时间表
-- [x] 已经爬到了所有的 gear 图片，所以可以开始最后一模块的实现了。
+- [x] 已经爬到了所有的 gear 图片，可以进行 SplatNet Gear 的完成。
+- [ ] 获取到了更丰富了 salmon run donation data，完成数据更换。
 - [ ] 图片预加载的问题。
-- [ ] rank/league Battle 以及 SplatNet Gear 的移动端改进。
+- [ ] rank/league Battle 以及 SplatNet Gear 的移动端完善。
 - [ ] 订阅功能，在 salmon run 开始/结束的时候发邮箱/短信通知。
