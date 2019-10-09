@@ -12,7 +12,7 @@
 
 ## 为什么做这个
 
-因为(我所知道的)能查时间表的只有在 Nintendo Switch Online 上以及[这里](https://splatoon2.ink/) 查看。
+因为(我所知道的)能查时间表的只有在 Nintendo Switch Online 上以及[这里](https://splatoon2.ink/)和[这里](https://content.oatmealdome.me/bcat/salmon_run)查看。
 
 以及因为出于对 splatoon 的喜爱。
 
