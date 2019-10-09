@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# killthislove
 
-## Available Scripts
+去年是没有感情的打工机器人，今年是没有感情的打工机器人 Pro
 
-In the project directory, you can run:
+## 这是什么
 
-### `yarn start`
+[SPLATOON 2](https://splatoon.nintendo.com/) 的 Salmon Run / Rank Battle / Regular Battle / Legau Battle / SplatNet Gear 的 schedule。
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 那么哪里可以看呢
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[这里！](http://47.103.13.83/) -> 之前的服务器和域名过期了来着，所以就只是个裸 IP。
 
-### `yarn test`
+## 为什么做这个
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+因为(我所知道的)能查时间表的只有在 Nintendo Switch Online 上以及[这里](https://splatoon2.ink/) 查看。
 
-### `yarn build`
+以及因为出于对 splatoon 的喜爱。
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 数据来源
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. schedule 数据来源于这里 -> [splatoon2.ink](https://splatoon2.ink/)
+2. 武器图片和装备图片来自这里 -> [Splatoon 2 Datamine](https://leanny.github.io/splat2/en_files.html)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 搭建相关
 
-### `yarn eject`
+前端用了 ReactJS ，以及一些 ReactJs 生态里的工具。
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+后端用了 Koa 2。<del>因为菜所以</del>只是简单的爬取一下数据，存到本地然后提供一下前端数据申请。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+爬数据是用的 nightmare 这个中间件。
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 一些说明
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. 本站数据、图片等来源于网路，所有权都归作者所有。
+2. 会继续深化(开发)一些(花里胡哨的)功能。
+3. 确实没有参与到站内数据、资源的制作中(schedule 的数据是开放的，感谢[mattisenhower](https://twitter.com/mattisenhower)，但是所有的图片都是网路获取的)，所以如果有伤害/侵犯到谁的利益，真的很抱歉，请一定联系我 -> bbbiaozzza@gmail.com 。
 
-## Learn More
+## ToDo-List
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [x] 已经爬到了所有的 gear 图片，所以可以开始最后一模块的实现了。
+- [ ] 图片预加载的问题。
+- [ ] rank/league Battle 以及 SplatNet Gear 的移动端改进。
+- [ ] 订阅功能，在 salmon run 开始/结束的时候发邮箱/短信通知。

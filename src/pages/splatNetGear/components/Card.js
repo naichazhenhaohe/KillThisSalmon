@@ -23,55 +23,60 @@ export default function Card(props) {
       clearInterval(interval);
     };
   });
-  if (remainTime < 0) return;
-  console.log("remainTime,", remainTime);
+  if (remainTime < 0) return <div></div>;
   const Rarity = [];
   for (let i = 0; i < rarity + 1; i++) {
     Rarity.push(
-      <div className="gear-skill skill-sm" key={"unkown-" + i}>
+      <div className="sbuSkill" key={"unkown-" + i}>
         <img src={`/images/skills/Unknown.png`} alt="gear" />
       </div>
     );
   }
   let database;
+  let gearNameClass;
   switch (type) {
     case "clothes":
       database = clothes;
+      gearNameClass = "gearName clothes";
       break;
     case "shoes":
       database = shoes;
+      gearNameClass = "gearName shoes";
       break;
     default:
       database = hats;
+      gearNameClass = "gearName hats";
       break;
   }
   const Detail = database.find(item => item.Id.toString() === Id);
   const GearName = dict[Detail.ModelName];
-  console.log(Detail);
   return (
     <div className="gear-card">
       <span className="hanger"></span>
-      <div className="gear-reamin">
-        REAMING:
-        {remainTime < 60
-          ? remainTime + " minutes"
-          : parseInt(remainTime / 60, 10) + " hours"}
+      <div className="gear-remain">
+        {remainTime < 60 ? (
+          <span className="gear-warn">{remainTime + " minutes"}</span>
+        ) : (
+          <span>{parseInt(remainTime / 60, 10) + " hours"}</span>
+        )}
       </div>
-      <div className="gear-skill">
+      <div className="gear-price">
         <img src={`/images/logo/glod.png`} alt="glod" />
+        <span>{price}</span>
       </div>
-      <div>{price}</div>
-      <div>
+      <div className="gear-brand">
         <img src={`/images/brands/${Detail.Brand}.png`} alt={`brand`} />
       </div>
-      <div>
+      <div className="gear-pic">
         <img src={`/images/gear/${Detail.ModelName}.png`} alt="gear" />
       </div>
       <div className="gear-skill">
-        <img src={`/images/skills/${skill}.png`} alt="gear" />
+        <div className="mainSkill">
+          <img src={`/images/skills/${skill}.png`} alt="gear" />
+        </div>
+        {Rarity}
       </div>
-      {Rarity}
-      <div>{GearName}</div>
+      <div className={gearNameClass}>{GearName}</div>
     </div>
   );
 }
