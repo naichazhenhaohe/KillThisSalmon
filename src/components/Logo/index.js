@@ -7,8 +7,6 @@ export default function Header(props) {
         src={`/images/logo/battle-${props.mode}.png`}
         alt="turf war logo"
       />
-      <br />
-      <span>{props.sentence}</span>
     </div>
   );
 }

@@ -35,7 +35,6 @@ export default class SplatNetGear extends React.Component {
   }
   render() {
     let { merchandises } = this.state;
-    console.log(merchandises);
     return (
       <section className="page-box">
         <Header />

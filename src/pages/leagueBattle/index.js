@@ -17,7 +17,6 @@ export default class LeagueBattle extends React.Component {
     axios
       .get("/schedule")
       .then(res => {
-        console.log(res);
         let schedule = res.data.data.league;
         for (let item of schedule) {
           item.endTime = moment.unix(item.end_time).format("M/D H:00");

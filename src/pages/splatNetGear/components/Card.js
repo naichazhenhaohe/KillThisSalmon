@@ -27,7 +27,7 @@ export default function Card(props) {
   const Rarity = [];
   for (let i = 0; i < rarity + 1; i++) {
     Rarity.push(
-      <div className="sbuSkill" key={"unkown-" + i}>
+      <div className="subSkill" key={"unkown-" + i}>
         <img src={`/images/skills/Unknown.png`} alt="gear" />
       </div>
     );

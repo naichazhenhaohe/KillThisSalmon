@@ -5,6 +5,7 @@ import { Link, withRouter } from "react-router-dom";
 function Header(props) {
   const [isShowNav, setIsShowNav] = useState(false);
   const [selected, setSelected] = useState(null);
+  const [fill, setFill] = useState("#ff5600");
   let {
     location: { pathname }
   } = props;
@@ -12,24 +13,28 @@ function Header(props) {
     switch (pathname) {
       case "/":
         setSelected("salmonRun");
+        setFill("#ff5600");
         break;
       case "/turfWar":
         setSelected("turfWar");
+        setFill("#18d618");
         break;
       case "/rankBattle":
         setSelected("rankBattle");
+        setFill("#a51de1");
         break;
       case "/leagueBattle":
         setSelected("leagueBattle");
+        setFill("#ef2d7c");
         break;
       case "/splatNetGear":
         setSelected("splatNetGear");
+        setFill("#ffcd00");
         break;
       default:
         setSelected(null);
     }
   }, [pathname]);
-
   return (
     <header>
       <div className="header-wrapper main-container">
@@ -84,7 +89,7 @@ function Header(props) {
               setIsShowNav(!isShowNav);
             }}
           >
-            <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+            <svg fill={fill} viewBox="0 0 24 24" width="24" height="24">
               <path
                 d="M3.5 5h16a1.5 1.5 0 0 1 0 3h-16a1.5 1.5 0 0 1 0-3zm0 6h16a1.5 1.5 0 0 1 0 3h-16a1.5 1.5 0 0 1 0-3zm0 6h16a1.5 1.5 0 0 1 0 3h-16a1.5 1.5 0 0 1 0-3z"
                 fillRule="evenodd"

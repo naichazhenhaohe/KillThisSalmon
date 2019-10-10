@@ -67,7 +67,7 @@ header {
       top: 35px;
       right: 30px;
       .show-bg {
-        background: #9c27b0;
+        background: #2697f7;
         padding: 3px;
       }
       .header-more {
@@ -87,15 +87,16 @@ header {
         white-space: nowrap;
         padding-right: 0;
         li {
-          background: #9c27b0;
+          background: #2697f7;
           display: block;
           font-family: "splatoon", sans-serif;
           font-size: 1.2rem;
           letter-spacing: 0.9px;
           line-height: 0.7;
           text-align: right;
-          border-bottom: 1px solid #ffffff;
+          border-bottom: 2px solid #2697f7;
           padding: 0 2vw;
+          margin-top: -1px;
           &:first-child {
             border-radius: 10px 0 0 0;
           }
