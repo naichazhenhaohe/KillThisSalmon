@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "@/axios";
-import moment from "moment";
 import Header from "./components/Header";
 import Card from "./components/Card";
 import "./index.scss";
@@ -19,9 +18,6 @@ export default class SplatNetGear extends React.Component {
         let data = res.data;
         if (data.code === 0) {
           let merchandises = data.data.merchandises;
-          for (let item of merchandises) {
-            item.endTime = moment.unix(item.end_time).format("M/D H:00");
-          }
           this.setState({
             merchandises
           });
@@ -40,8 +36,8 @@ export default class SplatNetGear extends React.Component {
         <Header />
         <div className="gear-flex">
           {merchandises &&
-            merchandises.map(item => (
-              <Card merchandise={item} key={item.endTime} />
+            merchandises.map((item, index) => (
+              <Card merchandise={item} key={item.end_time} />
             ))}
         </div>
       </section>

@@ -1,202 +1,99 @@
-.salmonRun {
-  text-shadow: 1px 1px 0 #000;
+.origin {
+  background-color: #ff5600;
+  background-image: url("/images/bg/bg.png");
+  & > div {
+    margin-top: 15px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
 
-  .box {
-    border-radius: 32px;
-    padding: 20px 0;
-    overflow: hidden;
+.salmon-phase {
+  font-family: "ZCOOL KuaiLe", cursive;
+  span {
+    display: block;
+  }
+}
+
+.salmon-remain {
+  font-family: "splatoon", serif;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  padding: 10px;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0;
+  }
+}
+
+.salmon-flex {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 2vw;
+  .salmon-stage {
+    width: 65%;
     position: relative;
-    background-image: url("/images/bg/bg.png");
-    background-color: #ff5600;
-    .container {
-      display: flex;
-      justify-content: space-around;
-      flex-flow: row nowrap;
-      padding: 0 20px;
-      @media screen and (max-width: 991px) {
-        justify-content: center;
+    border-radius: 25px;
+    overflow: hidden;
+    .stage-name {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .salmon-weapon {
+    width: 30%;
+    background: url("/images/bg/bg-stripes.png") repeat left top;
+    background-color: #00000080;
+    border-radius: 25px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    span {
+      width: 100%;
+      padding: 5px 0;
+      border-bottom: 5px dashed #fff;
+      letter-spacing: 1px;
+      @media screen and (max-width: 768px) {
+        font-size: 1.1rem;
       }
-      .worker {
-        width: 40%;
-        position: relative;
+    }
+    .weapon-img {
+      display: flex;
+      align-content: space-between;
+      justify-content: space-around;
+      width: 100%;
+      div {
+        padding: 5px;
         img {
           max-width: 100%;
-          position: absolute;
-          padding-right: 20px;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
+        }
+      }
+      @media screen and (min-width: 991px) {
+        flex-flow: row wrap;
+        div {
+          width: 50%;
+          img {
+            max-width: 100%;
+          }
         }
       }
     }
   }
-}
-
-.salmonRun-rotation {
-  .schedule {
-    font-family: "Foo", "Helvetica", sans-serif;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #7f0;
-    margin: 1vh 0;
-    @media screen and (max-width: 991px) {
-      font-size: 1.1rem;
-    }
-  }
-  .diff {
-    font-family: "splatoon", "Helvetica", sans-serif;
-    text-align: center;
-    font-size: 1.3rem;
-    color: white;
-    margin: 1vh 0;
-    @media screen and (max-width: 991px) {
-      font-size: 1.1rem;
-    }
-  }
-  .stage {
-    position: relative;
-    img {
+  @media screen and (max-width: 991px) {
+    flex-flow: row wrap;
+    .salmon-stage {
       width: 100%;
     }
-    span {
-      display: block;
-      position: absolute;
+    .salmon-weapon {
       width: 100%;
-      text-align: center;
-      font-family: "Foo", "Helvetica", sans-serif;
-      color: red;
-      font-size: 2rem;
-      letter-spacing: 0.9px;
-      @media screen and (max-width: 750px) {
-        font-size: 1rem;
-      }
+      margin-bottom: 10px;
     }
   }
-  .salmon-weapons {
-    display: flex;
-    justify-content: space-between;
-    .weapon {
-      width: 23%;
-      text-align: center;
-      padding: 1vw;
-      img {
-        width: 100%;
-        max-width: 100%;
-      }
-      span {
-        font-size: 0.8rem;
-        font-family: "splatoon", "Helvetica", sans-serif;
-        display: block;
-      }
-    }
-  }
-}
-
-.salmonRun-status {
-  text-align: center;
-  font-family: "Foo", sans-serif;
-  font-size: 1.3rem;
-  margin: 1vh 0;
-}
-
-.salmon-future-sm {
-  display: none;
-  @media screen and (max-width: 450px) {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 3vh;
-  }
-}
-.salmon-schedule-item {
-  font-family: "FOO", sans-serif;
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
-  display: none;
-  &:first-child {
-    margin-top: 5vh;
-  }
-  display: block;
-  padding: 0 20px;
-  text-align: center;
-  font-size: 1rem;
-  align-items: center;
-  margin: 2vh 0;
-  img {
-    height: 3vh;
-  }
-}
-
-.salmon-future-lg {
-  text-align: center;
-  font-family: "FOO";
-  color: #0f0;
-  letter-spacing: 1px;
-  font-size: 1.5rem;
-  margin: 5vh 0;
-  .salmon-futrue-text {
-    display: inline-block;
-    padding: 0 20px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: text-shadow 0.3s;
-    &:hover {
-      text-shadow: #ff00f0 0 0 5px;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    display: none;
-  }
-}
-
-.origin {
-  background-color: #ff5600;
-  background-image: url("/images/bg/bg.png");
-}
-
-.salmonRun-modal,
-.modal-mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 50;
-  width: 100%;
-  .modal-box {
-    position: relative;
-    top: 200px;
-    z-index: 51;
-    width: 40%;
-    padding: 24px 0;
-    margin: 0 auto;
-    border-radius: 25px;
-    button {
-      cursor: pointer;
-      border: 0;
-      outline: 0;
-      background-color: transparent;
-      position: absolute;
-      top: 0;
-      right: 0;
-      color: rgba($color: #000, $alpha: 0.45);
-      transition: color 0.3s;
-      padding: 0;
-      span {
-        display: block;
-        text-align: center;
-        width: 56px;
-        height: 56px;
-        line-height: 56px;
-        font-size: 16px;
-      }
-      &:hover {
-        color: rgba($color: #000000, $alpha: 0.75);
-      }
-    }
-  }
-}
-.modal-mask {
-  background-color: rgba(0, 0, 0, 0.65);
-  height: 100%;
 }

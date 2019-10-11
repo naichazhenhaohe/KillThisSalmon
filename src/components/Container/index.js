@@ -1,11 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import moment from "moment";
+import MapInfo from "@/utils/MapInfo";
 
 export default function Container(props) {
   const { schedule, isNow, isNext, color } = props;
   const [remainTime, setRemainTime] = useState(null);
-  let interval = null;
 
   let formatDuring = mss => {
     var hours = parseInt((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -18,7 +17,7 @@ export default function Container(props) {
   };
   useEffect(() => {
     if (isNow) {
-      interval = setInterval(() => {
+      let interval = setInterval(() => {
         if (schedule) {
           let endTime = moment.unix(schedule.end_time);
           let diff = endTime.diff(moment());
@@ -32,6 +31,8 @@ export default function Container(props) {
   });
 
   const { startTime, endTime, stage_a, stage_b, rule } = schedule;
+  let stageA = MapInfo.find(item => item.Id.toString() === stage_a.id).MapFileName;
+  let stageB = MapInfo.find(item => item.Id.toString() === stage_b.id).MapFileName;
   return (
     <div className="schedule-container">
       <div className={`box ${color}`}>
@@ -45,11 +46,11 @@ export default function Container(props) {
         <div className="schedule-imgs">
           <div className="stage-a stage">
             <span>{stage_a.name}</span>
-            <img src={`/images/stage/${stage_a.name}.png`} alt={stage_a.name} />
+            <img src={`/images/stages/${stageA}.png`} alt={stage_a.name} />
           </div>
           <div className="stage-b stage">
             <span>{stage_b.name}</span>
-            <img src={`/images/stage/${stage_b.name}.png`} alt={stage_b.name} />
+            <img src={`/images/stages/${stageB}.png`} alt={stage_b.name} />
           </div>
         </div>
       </div>

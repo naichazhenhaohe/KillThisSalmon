@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 import hats from "@/utils/GearInfo_Head.json";
 import clothes from "@/utils/GearInfo_Clothes.json";
 import shoes from "@/utils/GearInfo_Shoes.json";
 import dict from "@/utils/dict.json";
-import moment from "moment";
 
 export default function Card(props) {
   const { merchandise } = props;
@@ -15,6 +15,7 @@ export default function Card(props) {
   let [remainTime, setRemainTime] = useState(
     moment.unix(end_time).diff(moment(), "minutes")
   );
+
   useEffect(() => {
     let interval = setInterval(() => {
       setRemainTime(moment.unix(end_time).diff(moment(), "minutes"));
@@ -23,7 +24,11 @@ export default function Card(props) {
       clearInterval(interval);
     };
   });
-  if (remainTime < 0) return <div></div>;
+
+  if (remainTime < 0) {
+    return <div></div>;
+  }
+
   const Rarity = [];
   for (let i = 0; i < rarity + 1; i++) {
     Rarity.push(
@@ -32,6 +37,7 @@ export default function Card(props) {
       </div>
     );
   }
+
   let database;
   let gearNameClass;
   switch (type) {
@@ -46,10 +52,11 @@ export default function Card(props) {
     default:
       database = hats;
       gearNameClass = "gearName hats";
-      break;
   }
+
   const Detail = database.find(item => item.Id.toString() === Id);
   const GearName = dict[Detail.ModelName];
+
   return (
     <div className="gear-card">
       <span className="hanger"></span>
