@@ -9,9 +9,13 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
+  margin: 0;
+  padding: 0;
+
   .about-background {
     background-color: rgba(0, 0, 0, 0.85);
     position: absolute;
+    margin-bottom: 0;
     top: 0;
     left: 0;
     right: 0;
@@ -34,14 +38,17 @@
     line-height: 1.5;
     border-radius: 25px;
     cursor: default;
+    ::selection {
+      background-color: #77ffff;
+    }
     @media screen and (max-width: 991px) {
       width: 80%;
       height: 70vh;
       overflow: scroll;
       margin: 5vh 0;
     }
-    .arrow {
-      color: #ff2200;
+    p {
+      text-indent: 2em;
     }
     a {
       text-decoration: none;

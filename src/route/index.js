@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "@com/Header";
 import Footer from "@com/Footer";
-import About from "@com/About";
 import SalmonRun from "@/pages/salmonRun";
 import TurfWar from "@/pages/turfWar";
 import RankBattle from "@/pages/rankBattle";
@@ -18,7 +17,6 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/" exact component={SalmonRun}></Route>
             <Route path="/turfWar" component={TurfWar}></Route>
-            <Route path="/about" component={About}></Route>
             <Route path="/rankBattle" component={RankBattle}></Route>
             <Route path="/leagueBattle" component={LeagueBattle}></Route>
             <Route path="/splatNetGear" component={SplatNetGear}></Route>

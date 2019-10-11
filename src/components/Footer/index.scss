@@ -3,12 +3,14 @@ footer {
   left: 0;
   text-align: center;
   width: 100%;
-  div {
+  .footer-content {
     font-size: 0.8rem;
     letter-spacing: 0.8px;
     color: #cbcbcb;
     margin-bottom: 2vh;
-    a {
+    letter-spacing: 2px;
+    font-family: "splatoon", sans-serif;
+    #about {
       text-decoration: none;
       color: #ff71aa;
       transition: color 0.5s linear;

@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import About from "@com/About";
 import "./index.scss";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const [isShowModal, setIsShowModal] = useState(false);
   return (
     <footer>
-      <div>
-        <span className="sm-hidden">
-          I don't own any iamges or logos shown. Enjoy!
+      {isShowModal ? <About set={setIsShowModal} /> : ""}
+      <div className="footer-content">
+        <span>Nice To Meet Ya! </span>
+        <span
+          onClick={() => {
+            setIsShowModal(!isShowModal);
+          }}
+          id="about"
+        >
+          About
         </span>
-        <Link to="/about"> About</Link>
       </div>
     </footer>
   );

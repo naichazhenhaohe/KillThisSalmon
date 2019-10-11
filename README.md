@@ -38,10 +38,12 @@
 
 ## ToDo-List
 
-- [x] 完成 Regular/Rank/League Battle 的时间表
+- [x] 完成 Regular/Rank/League Battle 的时间表。
 - [x] 已经爬到了所有的 gear 图片，可以进行 SplatNet Gear 的完成。
 - [x] 获取到了更丰富了 salmon run donation data，完成数据更换。
-- [ ] 图片预加载的问题。
+- [x] 把底部的说明界面移出路由，仅作为一个普通的 modal。
+- [ ] ~~图片预加载的问题。~~
+- [ ] 图片加载优化。
 - [ ] ~~rank/league Battle 以及 SplatNet Gear 的移动端完善。~~
 - [ ] 移动端 / PC 端代码分离。
 - [ ] 订阅功能，在 salmon run 开始/结束的时候发邮箱/短信通知。
