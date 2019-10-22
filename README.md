@@ -43,6 +43,7 @@
 - [x] 获取到了更丰富了 salmon run donation data，完成数据更换。
 - [x] 把底部的说明界面移出路由，仅作为一个普通的 modal。
 - [ ] ~~图片预加载的问题。~~
+- [ ] ts迁移
 - [ ] 图片加载优化。
 - [ ] ~~rank/league Battle 以及 SplatNet Gear 的移动端完善。~~
 - [ ] 移动端 / PC 端代码分离。

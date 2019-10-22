@@ -25,7 +25,7 @@ export default function Card(props) {
     };
   });
 
-  if (remainTime < 0) {
+  if (remainTime <= 0) {
     return <div></div>;
   }
 
