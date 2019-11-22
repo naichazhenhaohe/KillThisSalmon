@@ -1,9 +1,5 @@
 import * as axios from "axios";
-<<<<<<< HEAD
 axios.defaults.baseURL = "http://47.103.13.83:3000";
-=======
-axios.defaults.baseURL = "http://somewhere.com";
->>>>>>> 28af3fe31a5bc1e166d068f3b9b08f1e04309435
 
 axios.interceptors.response.use(
   res => {
