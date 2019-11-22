@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import Weapon from "@/utils/WeaponInfo_Main";
-import MapInfo from "@/utils/MapInfo";
-import Dict from "@/utils/dict";
-import coop from "@/utils/coop";
-import clothes from "@/utils/GearInfo_Clothes.json";
-import shoes from "@/utils/GearInfo_Shoes.json";
-import hats from "@/utils/GearInfo_Head.json";
+
+const Weapon = require('../../../utils/WeaponInfo_Main.json');
+const MapInfo = require('../../../utils/MapInfo.json');
+const Dict = require('../../../utils/dict.json');
+const coop = require('../../../utils/coop.json');
+const clothes = require('../../../utils/GearInfo_Clothes.json');
+const shoes = require('../../../utils/GearInfo_Shoes.json');
+const hats = require('../../../utils/GearInfo_Head.json');
 
 export default function Container({ phase, index }) {
   const start = moment(phase.StartDateTime + "+00:00");

@@ -3,21 +3,30 @@ import axios from "@/axios";
 import moment from "moment";
 import Header from "@com/Logo";
 import Container from "@com/Container";
-
+import { withRouter } from "react-router-dom";
 import "./index.scss";
 
-export default class RankBattle extends React.Component {
+interface IState {
+  schedule: Array<any>
+  isContinue: Boolean
+}
+
+interface IProps {}
+
+class TurfWar extends React.Component <IProps, IState> {
+  loaded = []
   constructor() {
-    super();
+    super({});
     this.state = {
-      schedule: null
+      schedule: null,
+      isContinue: false
     };
   }
   componentDidMount() {
     axios
       .get("/schedule")
       .then(res => {
-        let schedule = res.data.data.gachi;
+        let schedule = res.data.data.regular;
         for (let item of schedule) {
           item.endTime = moment.unix(item.end_time).format("M/D H:00");
           item.startTime = moment.unix(item.start_time).format("M/D H:00");
@@ -36,24 +45,25 @@ export default class RankBattle extends React.Component {
         console.log(err);
       });
   }
+
   render() {
     const { schedule } = this.state;
     return (
-      <section className="rankBattle page-box">
-        <Header sentence="" mode="rank" />
+      <section className="turfWar page-box">
+        <Header sentence="" mode="regular" />
         {schedule &&
-          schedule
-            .slice(0, 6)
-            .map((item, index) => (
-              <Container
-                color="purple"
-                schedule={item}
-                key={"turfWar" + index}
-                isNow={index === 0 ? true : false}
-                isNext={index === 1 ? true : false}
-              />
-            ))}
+          schedule.map((item, index) => (
+            <Container
+              color="green"
+              schedule={item}
+              key={"turfWar" + index}
+              isNow={index === 0 ? true : false}
+              isNext={index === 1 ? true : false}
+            />
+          ))}
       </section>
     );
   }
 }
+
+export default withRouter(TurfWar);

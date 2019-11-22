@@ -4,9 +4,15 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import "./index.scss";
 
-export default class SplatNetGear extends React.Component {
+interface IState {
+  merchandises: Array<any>
+}
+
+interface IProps {}
+
+export default class SplatNetGear extends React.Component <IProps, IState> {
   constructor() {
-    super();
+    super({});
     this.state = {
       merchandises: null
     };
@@ -36,7 +42,7 @@ export default class SplatNetGear extends React.Component {
         <Header />
         <div className="gear-flex">
           {merchandises &&
-            merchandises.map((item, index) => (
+            merchandises.map(item => (
               <Card merchandise={item} key={item.end_time} />
             ))}
         </div>

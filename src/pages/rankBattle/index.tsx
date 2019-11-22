@@ -3,23 +3,27 @@ import axios from "@/axios";
 import moment from "moment";
 import Header from "@com/Logo";
 import Container from "@com/Container";
-import { withRouter } from "react-router-dom";
+
 import "./index.scss";
 
-class TurfWar extends React.Component {
+interface IState {
+  schedule: Object[]
+}
+
+interface IProps {}
+
+export default class RankBattle extends React.Component <IProps, IState> {
   constructor() {
-    super();
+    super({});
     this.state = {
-      schedule: null,
-      isContinue: false
+      schedule: null
     };
-    this.loaded = [];
   }
   componentDidMount() {
     axios
       .get("/schedule")
       .then(res => {
-        let schedule = res.data.data.regular;
+        let schedule = res.data.data.gachi;
         for (let item of schedule) {
           item.endTime = moment.unix(item.end_time).format("M/D H:00");
           item.startTime = moment.unix(item.start_time).format("M/D H:00");
@@ -38,25 +42,24 @@ class TurfWar extends React.Component {
         console.log(err);
       });
   }
-
   render() {
     const { schedule } = this.state;
     return (
-      <section className="turfWar page-box">
-        <Header sentence="" mode="regular" />
+      <section className="rankBattle page-box">
+        <Header sentence="" mode="rank" />
         {schedule &&
-          schedule.map((item, index) => (
-            <Container
-              color="green"
-              schedule={item}
-              key={"turfWar" + index}
-              isNow={index === 0 ? true : false}
-              isNext={index === 1 ? true : false}
-            />
-          ))}
+          schedule
+            .slice(0, 6)
+            .map((item, index) => (
+              <Container
+                color="purple"
+                schedule={item}
+                key={"turfWar" + index}
+                isNow={index === 0 ? true : false}
+                isNext={index === 1 ? true : false}
+              />
+            ))}
       </section>
     );
   }
 }
-
-export default withRouter(TurfWar);

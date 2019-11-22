@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import hats from "@/utils/GearInfo_Head.json";
-import clothes from "@/utils/GearInfo_Clothes.json";
-import shoes from "@/utils/GearInfo_Shoes.json";
-import dict from "@/utils/dict.json";
+
+const dict = require('../../../utils/dict.json');
+const clothes = require('../../../utils/GearInfo_Clothes.json');
+const shoes = require('../../../utils/GearInfo_Shoes.json');
+const hats = require('../../../utils/GearInfo_Head.json');
 
 export default function Card(props) {
   const { merchandise } = props;
@@ -64,7 +65,7 @@ export default function Card(props) {
         {remainTime < 60 ? (
           <span className="gear-warn">{remainTime + " minutes"}</span>
         ) : (
-          <span>{parseInt(remainTime / 60, 10) + " hours"}</span>
+          <span>{parseInt((remainTime / 60).toString(), 10) + " hours"}</span>
         )}
       </div>
       <div className="gear-price">

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import axios from "@/axios";
 import moment from "moment";
 import Header from "@com/Logo";
@@ -6,9 +6,15 @@ import Container from "@com/Container";
 
 import "./index.scss";
 
-export default class LeagueBattle extends React.Component {
+interface IState {
+  schedule: Object[]
+}
+
+interface IProps {}
+
+export default class LeagueBattle extends React.Component<IProps, IState> {
   constructor() {
-    super();
+    super({});
     this.state = {
       schedule: null
     };

@@ -2,8 +2,9 @@ import React, { Suspense } from "react";
 import Header from "./components/Header";
 import moment from "moment";
 import "moment/locale/zh-cn";
-import donation from "@/utils/coop";
 import "./index.scss";
+
+const donation = require('../../utils/coop.json');
 
 const Container = React.lazy(() => import("./components/Container"));
 

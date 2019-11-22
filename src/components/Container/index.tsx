@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import MapInfo from "@/utils/MapInfo";
+const MapInfo = require('@/utils/MapInfo.json');
 
 export default function Container(props) {
   const { schedule, isNow, isNext, color } = props;
   const [remainTime, setRemainTime] = useState(null);
 
   let formatDuring = mss => {
-    var hours = parseInt((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = parseInt((mss % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = parseInt((mss % (1000 * 60)) / 1000);
+    var hours = parseInt(((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString(), 10);
+    var minutes = parseInt(((mss % (1000 * 60 * 60)) / (1000 * 60)).toString(), 10);
+    var seconds = parseInt(((mss % (1000 * 60)) / 1000).toString(),10);
     if (hours) {
       return `${hours}h ${minutes}m ${seconds}s REMAINING`;
     }
