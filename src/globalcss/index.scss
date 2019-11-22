@@ -1,0 +1,192 @@
+// font set begings
+@font-face {
+  font-family: "FOO";
+  src: url("/fonts/foo.woff2");
+}
+@font-face {
+  font-family: "Overpass";
+  src: url("/fonts/Overpass_Bold.woff.ttf");
+}
+@font-face {
+  font-family: "splatoon";
+  src: url("/fonts/splatoon.woff2");
+}
+// font set ends
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  line-height: 1.3;
+  margin: 0;
+  background: url("/images/bg/splatoon-one-blob-black20.png") repeat top left;
+}
+
+.hiden {
+  display: none;
+}
+
+.fixed {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hanger {
+  display: block;
+  width: 58px;
+  height: 12px;
+  margin: 0 auto 10px;
+  background-color: #000;
+  position: relative;
+  border-radius: 6px;
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: #000;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    top: -6px;
+    left: 50%;
+    margin-left: -8px;
+  }
+}
+
+// xs < 768px  | sm >= 768px | md >=992px | lg >=1200
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main-container {
+    width: 970px;
+  }
+  .sm-show {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-container {
+    width: 1140px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .sm-hidden {
+    display: none !important;
+  }
+}
+
+.page-box {
+  padding-top: 60px;
+}
+
+.logo {
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 80%;
+  text-align: center;
+  img {
+    max-height: 300px;
+    @media screen and (max-width: 525px) {
+      max-height: 200px;
+      max-width: 300px;
+    }
+  }
+  span {
+    font-family: "splatoon", sans-serif;
+    letter-spacing: 0.96px;
+    font-size: 1.3rem;
+    color: #00ccff;
+  }
+}
+
+.schedule-container {
+  width: 70%;
+  margin: 5vh auto;
+  max-width: 1140px;
+  @media screen and (max-width: 990px) {
+    width: 80%;
+  }
+}
+
+.box {
+  border-radius: 32px;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  font-family: "splatoon", "Helvetica", sans-serif;
+  font-size: 1.3rem;
+  color: white;
+  .rotation,
+  .schedule {
+    margin: 2vh 0;
+  }
+
+  .schedule-imgs {
+    display: flex;
+    justify-content: space-between;
+    .stage {
+      width: 48%;
+      position: relative;
+      span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #ff00aa;
+        font-family: "FOO", sans-serif;
+        font-size: 1.4rem;
+        letter-spacing: 0.9px;
+        text-shadow: #ffffff80 1px 0 10px;
+        @media screen and (max-width: 580px) {
+          font-size: 1rem;
+        }
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      display: block;
+      .stage {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        &:first-child {
+          margin-bottom: 3vh;
+        }
+      }
+    }
+  }
+  .game-rule {
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: "FOO", sans-serif;
+    letter-spacing: 0.8px;
+    margin: 1vh;
+    color: #eeff00;
+  }
+}

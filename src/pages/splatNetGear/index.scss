@@ -1,0 +1,138 @@
+.gear-flex {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.gear-card {
+  position: relative;
+  overflow: hidden;
+  width: 40%;
+  margin: 5vh auto;
+  max-width: 1140px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  padding: 20px 0 0 0;
+  min-width: 360px;
+  @media screen and (max-width: 800px) {
+    width: 60%;
+    max-width: 360px;
+  }
+  @media screen and (max-width: 525px) {
+    width: 80%;
+    min-width: 300px;
+  }
+  .clothes {
+    background-color: #1dd6ad;
+  }
+  .shoes {
+    background-color: #e66900;
+  }
+  .hats {
+    background-color: #f0297e;
+  }
+}
+
+.gear-remain {
+  padding-top: 20px;
+  font-size: 1.3rem;
+  font-family: "FOO", sans-serif;
+  @media screen and (max-width: 525px) {
+    font-size: 1.8rem;
+  }
+}
+
+.gear-warn {
+  color: white;
+  background-color: red;
+  padding: 5px;
+  line-height: 0.9;
+  display: inline-block;
+}
+
+.gear-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  img {
+    max-width: 100%;
+    width: 35px;
+  }
+  span {
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+}
+
+.gear-brand {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  img {
+    max-width: 64px;
+    @media screen and (max-width: 525px) {
+      max-width: 50px;
+    }
+  }
+}
+
+.gear-pic {
+  padding: 20px;
+  img {
+    min-width: 200px;
+  }
+  @media screen and (max-width: 525px) {
+    padding: 0;
+    img {
+      min-width: 150px;
+    }
+  }
+}
+
+.gear-skill {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+  @media screen and (max-width: 525px) {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .mainSkill {
+    background-color: #000;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    img {
+      max-width: 100%;
+    }
+  }
+  .subSkill {
+    background-color: #000;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.gearName {
+  padding: 15px 0;
+  line-height: 1;
+  font-family: "SPLATOON", sans-serif;
+  font-size: 1.3rem;
+  background: url("/images/bg/bg-stripes.png") repeat left top;
+}
