@@ -1,29 +1,37 @@
-import React, { Suspense } from "react";
-import Header from "./components/Header";
-import moment from "moment";
-import "moment/locale/zh-cn";
-import "./index.scss";
+import React from 'react'
+import moment from 'moment'
+import Header from './components/Header'
+import Container from './components/Container'
+import donation from '@/utils/coop.json'
+import 'moment/locale/zh-cn'
+import './index.scss'
 
-const donation = require('../../utils/coop.json');
-
-const Container = React.lazy(() => import("./components/Container"));
+interface phase {
+  EndDateTime: string
+  StartDateTime: string
+  RareWeaponID: number
+  StageID: number
+  WeaponSets: number[]
+}
 
 export default function SalmonRun() {
-  let { Phases: phases } = donation;
-  moment.locale("zh-cn");
+  let { Phases: phases } = donation
+  // 设置moment的语言为中文。
+  moment.locale('zh-cn')
   // 过滤已结束的部分
+  // ToDo: 滚动条到底部自动更新
   phases = phases
-    .filter(item => moment(item.EndDateTime + "+00:00").isAfter(moment())) // +0000 用于切换成 UTC 时间
-    .slice(0, 5);
+    .filter((item: phase) =>
+      moment(item.EndDateTime + '+00:00').isAfter(moment().utc())
+    ) // +0000 用于切换成 UTC 时间
+    .slice(0, 5)
   return (
     <section className="salmonRun page-box">
       <Header />
-      <Suspense fallback={<div>loading...</div>}>
-        {phases &&
-          phases.map((item, index) => (
-            <Container key={index} phase={item} index={index} />
-          ))}
-      </Suspense>
+      {phases &&
+        phases.map((item: phase, index: number) => (
+          <Container key={index} phase={item} index={index} />
+        ))}
     </section>
-  );
+  )
 }

@@ -6,6 +6,11 @@
       "@com/*": ["./src/components/*"],
     },
     "allowSyntheticDefaultImports":true,
-    "jsx": "react"
-  }
+    "jsx": "react",
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src"
+  ],
+  "compileOnSave": false
 }
