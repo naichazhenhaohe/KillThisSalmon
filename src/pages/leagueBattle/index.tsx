@@ -13,8 +13,8 @@ interface IState {
 interface IProps {}
 
 export default class LeagueBattle extends React.Component<IProps, IState> {
-  constructor() {
-    super({});
+  constructor(props) {
+    super(props);
     this.state = {
       schedule: null
     };

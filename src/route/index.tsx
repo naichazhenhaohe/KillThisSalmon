@@ -13,15 +13,13 @@ export default class App extends React.Component {
     return (
       <Router>
         <Header />
-        <div>
-          <Switch>
-            <Route path="/" exact component={SalmonRun}></Route>
-            <Route path="/turfWar" component={TurfWar}></Route>
-            <Route path="/rankBattle" component={RankBattle}></Route>
-            <Route path="/leagueBattle" component={LeagueBattle}></Route>
-            <Route path="/splatNetGear" component={SplatNetGear}></Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/" exact component={SalmonRun}></Route>
+          <Route path="/turfWar" component={TurfWar}></Route>
+          <Route path="/rankBattle" component={RankBattle}></Route>
+          <Route path="/leagueBattle" component={LeagueBattle}></Route>
+          <Route path="/splatNetGear" component={SplatNetGear}></Route>
+        </Switch>
         <Footer />
       </Router>
     );

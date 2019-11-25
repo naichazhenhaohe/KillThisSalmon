@@ -11,8 +11,8 @@ interface IState {
 interface IProps {}
 
 export default class SplatNetGear extends React.Component <IProps, IState> {
-  constructor() {
-    super({});
+  constructor(props) {
+    super(props);
     this.state = {
       merchandises: null
     };

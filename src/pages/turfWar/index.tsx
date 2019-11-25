@@ -15,8 +15,8 @@ interface IProps {}
 
 class TurfWar extends React.Component <IProps, IState> {
   loaded = []
-  constructor() {
-    super({});
+  constructor(props) {
+    super(props);
     this.state = {
       schedule: null,
       isContinue: false

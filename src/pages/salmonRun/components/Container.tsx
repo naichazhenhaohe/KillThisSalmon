@@ -1,19 +1,28 @@
-import React, { useState, useEffect } from "react";
-import moment from "moment";
+import React, { useState, useEffect } from "react"
+import moment from "moment"
+import Weapon from '../../../utils/WeaponInfo_Main.json'
+import MapInfo from '../../../utils/MapInfo.json'
+import Dict from '../../../utils/dict.json'
+// import coop from '../../../utils/coop.json'
+// import clothes from '../../../utils/GearInfo_Clothes.json'
+// import shoes from '../../../utils/GearInfo_Shoes.json'
+// import hats from '../../../utils/GearInfo_Head.json'
 
-const Weapon = require('../../../utils/WeaponInfo_Main.json');
-const MapInfo = require('../../../utils/MapInfo.json');
-const Dict = require('../../../utils/dict.json');
-const coop = require('../../../utils/coop.json');
-const clothes = require('../../../utils/GearInfo_Clothes.json');
-const shoes = require('../../../utils/GearInfo_Shoes.json');
-const hats = require('../../../utils/GearInfo_Head.json');
+interface Weapon {
+  Id: number
+  ModelName: string
+  Name: string
+}
+interface MapInfo {
+  Id: string
+  MapFileName: string
+}
 
 export default function Container({ phase, index }) {
   const start = moment(phase.StartDateTime + "+00:00");
   const end = moment(phase.EndDateTime + "+00:00");
   const isOpening = start.isBefore(moment()) ? true : false;
-  function getRemain(time, state) {
+  function getRemain(time: moment.Moment, state: string) {
     const duration = moment.duration(time.diff(moment()));
     return (
       <div className="salmon-remain">
@@ -46,29 +55,28 @@ export default function Container({ phase, index }) {
   });
 
   // 获取stage信息
-  const stage = MapInfo.find(item => item.Id === phase.StageID).MapFileName;
-  console.log(stage);
+  const stage = MapInfo.find((item: MapInfo) => item.Id === phase.StageID).MapFileName;
   // 获取 award gear 信息
-  const award = coop.MonthlyRewardGears.find(
-    item => item.DateTime === phase.StartDateTime
-  );
-  let database;
-  switch (award.GearKind) {
-    case "cClothes":
-      database = clothes;
-      break;
-    case "cShoes":
-      database = shoes;
-      break;
-    default:
-      database = hats;
-  }
-  const awardInfo = database.find(item => item.Id === award.GearID);
+  // const award = coop.MonthlyRewardGears.find(
+  //   item => item.DateTime === phase.StartDateTime
+  // );
+  // let database;
+  // switch (award.GearKind) {
+  //   case "cClothes":
+  //     database = clothes;
+  //     break;
+  //   case "cShoes":
+  //     database = shoes;
+  //     break;
+  //   default:
+  //     database = hats;
+  // }
+  // const awardInfo = database.find(item => item.Id === award.GearID);
 
   const WeaponNames = [];
-  phase.WeaponSets.forEach((weapon, index) => {
-    let weaponName;
-    let weaponInfo = Weapon.find(item => item.Id === weapon);
+  phase.WeaponSets.forEach((weapon: number) => {
+    let weaponName: string;
+    let weaponInfo = Weapon.find((item: Weapon) => item.Id === weapon);
     if (weaponInfo) {
       weaponName = `Wst_${weaponInfo.Name}`;
     } else if (weapon === -1) {
@@ -108,19 +116,4 @@ export default function Container({ phase, index }) {
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="salmon-award">
-{awardInfo ? (
-  <div>
-    <img
-      src={`/images/gear/${awardInfo.ModelName}.png`}
-      alt="gear"
-    />
-  </div>
-) : (
-  ""
-)}
-</div> */
 }
