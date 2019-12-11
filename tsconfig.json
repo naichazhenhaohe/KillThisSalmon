@@ -7,7 +7,9 @@
     },
     "allowSyntheticDefaultImports":true,
     "jsx": "react",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": ["react", "jest"],
+    "lib":["es2015", "DOM"]
   },
   "include": [
     "src"

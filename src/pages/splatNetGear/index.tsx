@@ -22,7 +22,6 @@ export default class SplatNetGear extends React.Component<any, IState> {
         let data = res.data
         if (data.code === 0) {
           let merchandises = data.data.merchandises
-          console.log(merchandises)
           this.setState({
             merchandises
           })
