@@ -9,13 +9,6 @@
   }
 }
 
-.salmon-phase {
-  font-family: "ZCOOL KuaiLe", cursive;
-  span {
-    display: block;
-  }
-}
-
 .salmon-remain {
   font-family: "splatoon", serif;
   letter-spacing: 2px;
@@ -24,76 +17,5 @@
   @media screen and (max-width: 768px) {
     font-size: 1rem;
     padding: 0;
-  }
-}
-
-.salmon-flex {
-  display: flex;
-  justify-content: space-around;
-  margin: 0 2vw;
-  .salmon-stage {
-    width: 65%;
-    position: relative;
-    border-radius: 25px;
-    overflow: hidden;
-    .stage-name {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .salmon-weapon {
-    width: 30%;
-    background: url("/images/bg/bg-stripes.png") repeat left top;
-    background-color: #00000080;
-    border-radius: 25px;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: space-around;
-    span {
-      width: 100%;
-      padding: 5px 0;
-      border-bottom: 5px dashed #fff;
-      letter-spacing: 1px;
-      @media screen and (max-width: 768px) {
-        font-size: 1.1rem;
-      }
-    }
-    .weapon-img {
-      display: flex;
-      align-content: space-between;
-      justify-content: space-around;
-      width: 100%;
-      div {
-        padding: 5px;
-        img {
-          max-width: 100%;
-        }
-      }
-      @media screen and (min-width: 991px) {
-        flex-flow: row wrap;
-        div {
-          width: 50%;
-          img {
-            max-width: 100%;
-          }
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 991px) {
-    flex-flow: row wrap;
-    .salmon-stage {
-      width: 100%;
-    }
-    .salmon-weapon {
-      width: 100%;
-      margin-bottom: 10px;
-    }
   }
 }

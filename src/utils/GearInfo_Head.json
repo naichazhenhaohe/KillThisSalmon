@@ -746,6 +746,7 @@
     "Rarity": 2,
     "Skill0": "BombDamage_Reduction"
   },
+
   {
     "Brand": "B07",
     "Id": 7000,
@@ -1186,6 +1187,15 @@
     "Price": 8200,
     "Rarity": 2,
     "Skill0": "RespawnTime_Save"
+  },
+  {
+    "Brand": "B10",
+    "Id": 24008,
+    "ModelName": "Hed_HAP008",
+    "Name": "HAP008",
+    "Price": 13200,
+    "Rarity": 2,
+    "Skill0": "OpInkEffect_Reduction"
   },
   {
     "Brand": "B99",

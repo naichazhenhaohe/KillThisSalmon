@@ -44,8 +44,10 @@
 - [x] 把底部的说明界面移出路由，仅作为一个普通的 modal。
 - [ ] ~~图片预加载的问题。~~
 - [x] ts迁移
-- [ ] ts完善
+- [ ] 地图图片Modal完成
+- [ ] styled-components迁移
 - [ ] 图片加载优化。
+- [ ] ts完善
 - [ ] ~~rank/league Battle 以及 SplatNet Gear 的移动端完善。~~
 - [ ] 移动端 / web端代码分离。
 - [ ] 邮件/短信订阅功能
