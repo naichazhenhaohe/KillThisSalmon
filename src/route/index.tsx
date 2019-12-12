@@ -7,11 +7,15 @@ import TurfWar from "@/pages/turfWar";
 import RankBattle from "@/pages/rankBattle";
 import LeagueBattle from "@/pages/leagueBattle";
 import SplatNetGear from "@/pages/splatNetGear";
+import { myTheme } from '@/globalcss/myTheme'
+import styled from 'styled-components'
+
+const StyledRouter = styled(Router)``
 
 export default class App extends React.Component {
   render() {
     return (
-      <Router>
+      <StyledRouter theme={myTheme}>
         <Header />
         <Switch>
           <Route path="/" exact component={SalmonRun}></Route>
@@ -21,7 +25,7 @@ export default class App extends React.Component {
           <Route path="/splatNetGear" component={SplatNetGear}></Route>
         </Switch>
         <Footer />
-      </Router>
+      </StyledRouter>
     );
   }
 }

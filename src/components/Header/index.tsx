@@ -1,66 +1,67 @@
-import React, { useState, useEffect } from "react";
-import "./index.scss";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import './index.scss'
+import { Link, withRouter } from 'react-router-dom'
+import { StyledLink } from './style'
 
 function Header(props) {
-  const [isShowNav, setIsShowNav] = useState(false);
-  const [selected, setSelected] = useState(null);
-  const [fill, setFill] = useState("#ff5600");
+  const [isShowNav, setIsShowNav] = useState(false)
+  const [selected, setSelected] = useState(null)
+  const [fill, setFill] = useState('#ff5600')
   let {
     location: { pathname }
-  } = props;
+  } = props
   useEffect(() => {
     switch (pathname) {
-      case "/":
-        setSelected("salmonRun");
-        setFill("#ff5600");
-        break;
-      case "/turfWar":
-        setSelected("turfWar");
-        setFill("#18d618");
-        break;
-      case "/rankBattle":
-        setSelected("rankBattle");
-        setFill("#a51de1");
-        break;
-      case "/leagueBattle":
-        setSelected("leagueBattle");
-        setFill("#ef2d7c");
-        break;
-      case "/splatNetGear":
-        setSelected("splatNetGear");
-        setFill("#ffcd00");
-        break;
+      case '/':
+        setSelected('salmonRun')
+        setFill('#ff5600')
+        break
+      case '/turfWar':
+        setSelected('turfWar')
+        setFill('#18d618')
+        break
+      case '/rankBattle':
+        setSelected('rankBattle')
+        setFill('#a51de1')
+        break
+      case '/leagueBattle':
+        setSelected('leagueBattle')
+        setFill('#ef2d7c')
+        break
+      case '/splatNetGear':
+        setSelected('splatNetGear')
+        setFill('#ffcd00')
+        break
       default:
-        setSelected(null);
+        setSelected(null)
     }
-  }, [pathname]);
+  }, [pathname])
   return (
     <header>
       <div className="header-wrapper main-container">
         <ul className="sm-hidden">
           <li>
-            <Link
+            <StyledLink
               to="/"
-              className={selected === "salmonRun" ? "font-origin" : ""}
+              color={selected === 'salmonRun' ? 'origin' : ''}
             >
               Salmon Run
-            </Link>
+            </StyledLink>
           </li>
           <li>
-            <Link
+            <StyledLink
               to={{
-                pathname: "/turfWar"
+                pathname: '/turfWar'
               }}
-              className={selected === "turfWar" ? "font-green" : ""}
+              color={selected === 'turfWar' ? '#18d618' : ''}
             >
               Regular Battle
-            </Link>
+            </StyledLink>
           </li>
           <li>
             <Link
               to="/rankBattle"
-              className={selected === "rankBattle" ? "font-purple" : ""}
+              className={selected === 'rankBattle' ? 'font-purple' : ''}
             >
               Rank Battle
             </Link>
@@ -68,7 +69,7 @@ function Header(props) {
           <li>
             <Link
               to="/leagueBattle"
-              className={selected === "leagueBattle" ? "font-pink" : ""}
+              className={selected === 'leagueBattle' ? 'font-pink' : ''}
             >
               League Battle
             </Link>
@@ -76,7 +77,7 @@ function Header(props) {
           <li>
             <Link
               to="/splatNetGear"
-              className={selected === "splatNetGear" ? "font-yellow" : ""}
+              className={selected === 'splatNetGear' ? 'font-yellow' : ''}
             >
               SplatNet Gear
             </Link>
@@ -84,9 +85,9 @@ function Header(props) {
         </ul>
         <div className="sm-show nav">
           <div
-            className={isShowNav ? "header-more show-bg" : "header-more"}
+            className={isShowNav ? 'header-more show-bg' : 'header-more'}
             onClick={() => {
-              setIsShowNav(!isShowNav);
+              setIsShowNav(!isShowNav)
             }}
           >
             <svg fill={fill} viewBox="0 0 24 24" width="24" height="24">
@@ -99,13 +100,13 @@ function Header(props) {
           {isShowNav ? (
             <ul
               onClick={() => {
-                setIsShowNav(!isShowNav);
+                setIsShowNav(!isShowNav)
               }}
             >
-              <li id="nav-salmonRun">
+              <li>
                 <Link
                   to="/"
-                  className={selected === "salmonRun" ? "font-origin" : ""}
+                  className={selected === 'salmonRun' ? 'font-origin' : ''}
                 >
                   Salmon Run
                 </Link>
@@ -113,7 +114,7 @@ function Header(props) {
               <li id="nav-turfWar">
                 <Link
                   to="/turfWar"
-                  className={selected === "turfWar" ? "font-green" : ""}
+                  className={selected === 'turfWar' ? 'font-green' : ''}
                 >
                   Regular Battle
                 </Link>
@@ -121,7 +122,7 @@ function Header(props) {
               <li id="nav-rankBattle">
                 <Link
                   to="/rankBattle"
-                  className={selected === "rankBattle" ? "font-purple" : ""}
+                  className={selected === 'rankBattle' ? 'font-purple' : ''}
                 >
                   Rank Battle
                 </Link>
@@ -129,7 +130,7 @@ function Header(props) {
               <li id="nav-leagueBattle">
                 <Link
                   to="/leagueBattle"
-                  className={selected === "leagueBattle" ? "font-pink" : ""}
+                  className={selected === 'leagueBattle' ? 'font-pink' : ''}
                 >
                   League Battle
                 </Link>
@@ -137,19 +138,19 @@ function Header(props) {
               <li id="nav-splatNetGear">
                 <Link
                   to="/splatNetGear"
-                  className={selected === "splatNetGear" ? "font-yellow" : ""}
+                  className={selected === 'splatNetGear' ? 'font-yellow' : ''}
                 >
                   SplatNet Gear
                 </Link>
               </li>
             </ul>
           ) : (
-            ""
+            ''
           )}
         </div>
       </div>
     </header>
-  );
+  )
 }
 
-export default withRouter(Header);
+export default withRouter(Header)
