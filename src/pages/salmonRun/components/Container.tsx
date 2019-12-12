@@ -3,7 +3,7 @@ import moment from 'moment'
 import Weapon from '@/utils/WeaponInfo_Main.json'
 import MapInfo from '@/utils/MapInfo.json'
 import Dict from '@/utils/dict.json'
-import {ModalMask} from '@com/ModalForImage'
+import { ModalMask } from '@com/ModalForImage'
 import Remaining from './Remaining'
 import styled from 'styled-components'
 
@@ -182,6 +182,7 @@ export default function Container(props: props) {
               alt="stage"
               onClick={() => {
                 setIsShowModal(!isShowModal)
+                console.log(isShowModal)
               }}
             />
             <StageName>{Dict[stage]}</StageName>
