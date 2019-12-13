@@ -1,5 +1,5 @@
-import React from "react";
-import "./index.scss";
+import React from 'react'
+import './index.scss'
 
 export default function About(props) {
   return (
@@ -43,9 +43,9 @@ export default function About(props) {
       <div
         className="close"
         onClick={() => {
-          props.set();
+          props.set()
         }}
       ></div>
     </div>
-  );
+  )
 }

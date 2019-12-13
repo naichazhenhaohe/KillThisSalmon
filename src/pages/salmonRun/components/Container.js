@@ -8,32 +8,13 @@ import Dict from '@/utils/dict.json'
 // import shoes from '../../../utils/GearInfo_Shoes.json'
 // import hats from '../../../utils/GearInfo_Head.json'
 
-interface Weapon {
-  Id: number
-  ModelName: string
-  Name: string
-}
-
-interface phase {
-  EndDateTime: string
-  StartDateTime: string
-  RareWeaponID: number
-  StageID: number
-  WeaponSets: number[]
-}
-
-interface props {
-  phase: phase
-  index: number
-}
-
-export default function Container(props: props) {
+export default function Container(props) {
   const { phase, index } = props
   const start = moment(phase.StartDateTime + '+00:00')
   const end = moment(phase.EndDateTime + '+00:00')
   const isOpening = start.isBefore(moment()) ? true : false
 
-  function getRemain(time: moment.Moment, state: string) {
+  function getRemain(time, state) {
     const duration = moment.duration(time.diff(moment()))
     return (
       <div className="salmon-remain">
@@ -88,9 +69,9 @@ export default function Container(props: props) {
 
   const WeaponNames = []
 
-  phase.WeaponSets.forEach((weapon: number) => {
-    let weaponName: string
-    let weaponInfo = Weapon.find((item: Weapon) => item.Id === weapon)
+  phase.WeaponSets.forEach(weapon => {
+    let weaponName
+    let weaponInfo = Weapon.find(item => item.Id === weapon)
     weaponName = weaponInfo
       ? `Wst_${weaponInfo.Name}`
       : weapon === -1

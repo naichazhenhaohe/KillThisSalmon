@@ -4,12 +4,8 @@ import Header from './components/Header'
 import Card from './components/Card'
 import './index.scss'
 
-interface IState {
-  merchandises: Array<any>
-}
-
-export default class SplatNetGear extends React.Component<any, IState> {
-  constructor(props: any) {
+export default class SplatNetGear extends React.Component {
+  constructor(props) {
     super(props)
     this.state = {
       merchandises: null
