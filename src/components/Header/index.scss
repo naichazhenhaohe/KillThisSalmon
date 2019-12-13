@@ -28,39 +28,6 @@ header {
       padding: 0;
       list-style: none;
       color: #fff;
-      li {
-        font-family: "Foo", "Helvetica", sans-serif;
-        font-size: 1.4rem;
-        text-align: center;
-        -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-        line-height: 1;
-        a {
-          display: block;
-          padding: 14px 0 10px 0;
-          z-index: 3;
-          white-space: nowrap;
-          position: relative;
-          text-decoration: none;
-          color: #fff;
-        }
-        .font-origin {
-          color: #ff5600;
-        }
-        .font-green {
-          color: #18d618;
-        }
-        .font-purple {
-          color: #a51de1;
-        }
-        .font-pink {
-          color: #ef2d7c;
-        }
-        .font-yellow {
-          color: #ffcd00;
-        }
-      }
     }
     .nav {
       position: fixed;
