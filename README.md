@@ -31,10 +31,10 @@
 
 ## 一些说明
 
-1. 本站数据、图片、logo 等来源于网路，所有权都归作者所有。
-2. 会继续深化(开发)一些(花里胡哨的)功能。
-3. 确实没有参与到站内数据、资源的制作中，所以如果有伤害/侵犯到谁的利益，真的很抱歉，请一定联系我 -> bbbiaozzza@gmail.com 。
-4. 数据来源。一部分来自[splatoon2.ink](https://splatoon2.ink/)，感谢[mattisenhower](https://twitter.com/mattisenhower)。还有一部分来自[这里](https://content.oatmealdome.me/bcat/salmon_run)，因为被墙了，所以这里需要翻墙，而且这个网站反爬做的好厉害(可能就是我菜)，所以通过一些观察。。。在[这里](https://github.com/Leanny/leanny.github.io)拿到的。所以其实数据的获取都不是通过爬虫完成的，前面那个是直接申请的，后面那个是手动下载的(因为一份数据里就就够用到 2021 年初了，所以本来都打算拿起 python 写爬虫，现在也放弃了，什么时候心情好想起来去下载一下就好了。)
+1. 本站数据、图片、logo 等来源于网路，所有权都归作者所有。所以如果有伤害/侵犯到谁的利益，真的很抱歉，请一定联系我 -> bbbiaozzza@gmail.com 。
+2. 数据来源。一部分来自[splatoon2.ink](https://splatoon2.ink/)，感谢[mattisenhower](https://twitter.com/mattisenhower)。还有一部分来自[这里](https://content.oatmealdome.me/bcat/salmon_run)，因为被墙了，所以这里需要翻墙，而且这个网站反爬做的好厉害(可能就是我菜)，所以通过一些观察。。。在[这里](https://github.com/Leanny/leanny.github.io)拿到的。所以其实数据的获取都不是通过爬虫完成的，前面那个是直接申请的，后面那个是手动下载的(因为一份数据里就就够用到 2021 年初了，所以本来都打算拿起 python 写爬虫，现在也放弃了，什么时候心情好想起来去下载一下就好了。)
+3. 对于 TypeScript 的使用也有一些考虑，所以开了一个分支进行 TS 的简单的迁移，因为本来就是一个超小型的小应用，有点杀鸡牛刀的感觉，其次就是对于 TS 的使用经验不足，一些冲突/配置是很需要考虑的。所以暂时会保留主分支不配置TypeScript
+4. 很喜欢挖坑，所以经常会增加todolist而没有完善，虽然知道是个坏习惯 XD
 
 ## ToDo-List
 
@@ -44,8 +44,10 @@
 - [x] 把底部的说明界面移出路由，仅作为一个普通的 modal。
 - [ ] ~~图片预加载的问题。~~
 - [x] ts迁移
-- [ ] ts完善
-- [ ] 图片加载优化。
+- [ ] styled-components 迁移
+- [ ] (地图)图片的Modal实现
+- [ ] 图片加载优化
+- [ ] ts完善（ ？
 - [ ] ~~rank/league Battle 以及 SplatNet Gear 的移动端完善。~~
 - [ ] 移动端 / web端代码分离。
 - [ ] 邮件/短信订阅功能
