@@ -6,13 +6,8 @@ import Container from '@com/Container'
 import { withRouter } from 'react-router-dom'
 import './index.scss'
 
-interface IState {
-  schedule: Array<any>
-  isContinue: Boolean
-}
-
-class TurfWar extends React.Component<{}, IState> {
-  constructor(props: any) {
+class TurfWar extends React.Component {
+  constructor(props) {
     super(props)
     this.state = {
       schedule: null,
