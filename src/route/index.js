@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import theme from '@/globalcss/theme'
+import { GlobalStyle } from '@/globalcss/globalStyle'
 import Header from '@com/Header'
 import Footer from '@com/Footer'
 import SalmonRun from '@/pages/salmonRun'
@@ -14,6 +15,7 @@ export default class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Router>
           <Header />
           <Switch>

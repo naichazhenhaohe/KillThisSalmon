@@ -4,7 +4,8 @@ const theme = {
     green: '#18d618',
     purple: '#a51de1',
     pink: '#ef2d7c',
-    yellow: '#ffcd00'
+    yellow: '#ffcd00',
+    white: '#ffffff'
   },
   fonts: {
     foo: '"Foo", "Helvetica", sans-serif'

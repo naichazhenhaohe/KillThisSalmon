@@ -1,77 +1,60 @@
 import React, { useState, useEffect } from 'react'
 import './index.scss'
 import { Link, withRouter } from 'react-router-dom'
-import { StyledLink, NavItem } from './styled'
+import { StyledLink, NavItem, StyledHeader, HeaderWrapper } from './styled'
+import { HidenSm } from '@/globalcss/globalStyle'
 
 function Header(props) {
-  const [isShowNav, setIsShowNav] = useState(false)
-  const [selected, setSelected] = useState('salmonRun')
-  const [fill, setFill] = useState('#ff5600')
   let {
     location: { pathname }
   } = props
-  useEffect(() => {
-    switch (pathname) {
-      case '/':
-        setSelected('salmonRun')
-        setFill('#ff5600')
-        break
-      case '/turfWar':
-        setSelected('turfWar')
-        setFill('#18d618')
-        break
-      case '/rankBattle':
-        setSelected('rankBattle')
-        setFill('#a51de1')
-        break
-      case '/leagueBattle':
-        setSelected('leagueBattle')
-        setFill('#ef2d7c')
-        break
-      case '/splatNetGear':
-        setSelected('splatNetGear')
-        setFill('#ffcd00')
-        break
-      default:
-        setSelected(null)
-    }
-  }, [pathname])
+  const navList = [
+    { path: '/', color: 'origin', description: 'Salmon Run' },
+    { path: '/turfWar', color: 'green', description: 'Regular Battle' },
+    { path: '/rankBattle', color: 'purple', description: 'Rank Battle' },
+    { path: '/leagueBattle', color: 'pink', description: 'League Battle' },
+    { path: '/splatNetGear', color: 'yellow', description: 'SplatNet Gear' }
+  ]
+  // const [isShowNav, setIsShowNav] = useState(false)
+  // const [selected, setSelected] = useState(pathname.substring(1))
+  // const [fill, setFill] = useState('#ff5600')
+  // useEffect(() => {
+  //   switch (pathname) {
+  //     case '/':
+  //       setSelected('salmonRun')
+  //       setFill('#ff5600')
+  //       break
+  //     case '/turfWar':
+  //       setSelected('turfWar')
+  //       setFill('#18d618')
+  //       break
+  //     case '/rankBattle':
+  //       setSelected('rankBattle')
+  //       setFill('#a51de1')
+  //       break
+  //     case '/leagueBattle':
+  //       setSelected('leagueBattle')
+  //       setFill('#ef2d7c')
+  //       break
+  //     case '/splatNetGear':
+  //       setSelected('splatNetGear')
+  //       setFill('#ffcd00')
+  //       break
+  //     default:
+  //       setSelected(null)
+  //   }
+  // }, [pathname])
   return (
-    <header>
-      <div className="header-wrapper main-container">
-        <ul className="sm-hidden">
-          <NavItem>
-            <StyledLink to="/" color={selected === 'salmonRun' ? 'origin' : 'white'}>
-              Salmon Run
+    <StyledHeader>
+      <HeaderWrapper>
+        <HidenSm>
+          {navList.map((item, index) => (
+            <StyledLink key={index} to={item.path} color={item.path === '/' ? 'origin' : 'white'}>
+              {item.description}
             </StyledLink>
-          </NavItem>
-          <NavItem>
-            <StyledLink
-              to={{
-                pathname: '/turfWar'
-              }}
-              className={selected === 'turfWar' ? 'font-green' : ''}
-            >
-              Regular Battle
-            </StyledLink>
-          </NavItem>
-          <NavItem>
-            <StyledLink to="/rankBattle" className={selected === 'rankBattle' ? 'font-purple' : ''}>
-              Rank Battle
-            </StyledLink>
-          </NavItem>
-          <NavItem>
-            <StyledLink to="/leagueBattle" className={selected === 'leagueBattle' ? 'font-pink' : ''}>
-              League Battle
-            </StyledLink>
-          </NavItem>
-          <NavItem>
-            <StyledLink to="/splatNetGear" className={selected === 'splatNetGear' ? 'font-yellow' : ''}>
-              SplatNet Gear
-            </StyledLink>
-          </NavItem>
-        </ul>
-        <div className="sm-show nav">
+          ))}
+        </HidenSm>
+        {/* <div className="sm-show nav">
           <div
             className={isShowNav ? 'header-more show-bg' : 'header-more'}
             onClick={() => {
@@ -120,9 +103,9 @@ function Header(props) {
           ) : (
             ''
           )}
-        </div>
-      </div>
-    </header>
+        </HeaderWrapper> */}
+      </HeaderWrapper>
+    </StyledHeader>
   )
 }
 
